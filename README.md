@@ -1,2 +1,2 @@
 # jrt-javascript-runtime
- RT JavaScript runtime library distribution and documentation.
+ jRT is a JavaScript runtime library (see /dist and /doc directories).
