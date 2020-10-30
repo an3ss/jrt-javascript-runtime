@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Action</title>
+    <title>JSDoc: Class: AjaxRequest</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Action</h1>
+    <h1 class="page-title">Class: AjaxRequest</h1>
 
     
 
@@ -29,9 +29,9 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="global.html#jrt">jrt</a>.</span>Action<span class="signature">()</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="global.html#jrt">jrt</a>.</span>AjaxRequest<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>Base class for app actions.</p></div>
+            <div class="class-description"><p>Properties for an Ajax request (see <a href="jrt.Ajax.html">jrt.Ajax</a>).</p></div>
         
     
 </header>
@@ -46,7 +46,7 @@
     
 
     
-    <h4 class="name" id="Action"><span class="type-signature"></span>new Action<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="AjaxRequest"><span class="type-signature"></span>new AjaxRequest<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -77,13 +77,6 @@
 
     
 
-    
-    <dt class="implements">Implements:</dt>
-    <dd class="implements"><ul>
-        
-            <li><a href="jrt.Target.html">jrt.Target</a></li>
-        
-    </ul></dd>
     
 
     
@@ -146,13 +139,13 @@
 
         
             
-<h4 class="name" id="caller"><span class="type-signature">(nullable) </span>caller<span class="type-signature"> :<a href="jrt.Target.html">jrt.Target</a></span></h4>
+<h4 class="name" id="background"><span class="type-signature"></span>background<span class="type-signature"> :boolean|undefined</span></h4>
 
 
 
 
 <div class="description">
-    <p>The target that called this target for the last time.</p>
+    <p>If this is false or undefined, the UI is disabled until a response is received.</p>
 </div>
 
 
@@ -161,7 +154,10 @@
     <ul>
         <li>
             
-<span class="param-type"><a href="jrt.Target.html">jrt.Target</a></span>
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">undefined</span>
 
 
         </li>
@@ -183,13 +179,6 @@
 
     
 
-    
-    <dt class="implements">Implements:</dt>
-    <dd class="implements"><ul>
-        
-            <li><a href="jrt.Target.html#caller">jrt.Target#caller</a></li>
-        
-    </ul></dd>
     
 
     
@@ -220,13 +209,13 @@
 
         
             
-<h4 class="name" id="id"><span class="type-signature">(constant) </span>id<span class="type-signature"> :string</span></h4>
+<h4 class="name" id="baseUrl"><span class="type-signature"></span>baseUrl<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
-    <p>The target id.</p>
+    <p>The target URL results from concatenating 'baseURL', 'servicePath' and 'serviceName'.</p>
 </div>
 
 
@@ -258,13 +247,6 @@
     
 
     
-    <dt class="implements">Implements:</dt>
-    <dd class="implements"><ul>
-        
-            <li><a href="jrt.Target.html#id">jrt.Target#id</a></li>
-        
-    </ul></dd>
-    
 
     
 
@@ -294,13 +276,14 @@
 
         
             
-<h4 class="name" id="req"><span class="type-signature">(non-null) </span>req<span class="type-signature"> :<a href="jrt.AppRequest.html">jrt.AppRequest</a></span></h4>
+<h4 class="name" id="formData"><span class="type-signature"></span>formData<span class="type-signature"> :FormData|undefined</span></h4>
 
 
 
 
 <div class="description">
-    <p>The request that activated this target.</p>
+    <p>The request parameters as a FormData object. If both 'params' and 'formData'
+are specified in a request, then all their values are sent together.</p>
 </div>
 
 
@@ -309,82 +292,10 @@
     <ul>
         <li>
             
-<span class="param-type"><a href="jrt.AppRequest.html">jrt.AppRequest</a></span>
+<span class="param-type">FormData</span>
+|
 
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="implements">Implements:</dt>
-    <dd class="implements"><ul>
-        
-            <li><a href="jrt.Target.html#req">jrt.Target#req</a></li>
-        
-    </ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="result"><span class="type-signature"></span>result<span class="type-signature"> :*</span></h4>
-
-
-
-
-<div class="description">
-    <p>This value is set when a value is passed to the #finish method.
-If no value is passed, the result will be null.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">*</span>
+<span class="param-type">undefined</span>
 
 
         </li>
@@ -436,14 +347,227 @@ If no value is passed, the result will be null.</p>
 
         
             
-<h4 class="name" id="running"><span class="type-signature"></span>running<span class="type-signature"> :boolean</span></h4>
+<h4 class="name" id="method"><span class="type-signature"></span>method<span class="type-signature"> :string|undefined</span></h4>
 
 
 
 
 <div class="description">
-    <p>True if this action is running. An action starts runnning when it is requested,
-and stops running when #finish is called or a new page is requested.</p>
+    <p>The 'method' can be &quot;GET&quot; (the default), &quot;POST&quot;, &quot;PUT&quot;, &quot;PATCH&quot;, &quot;DELETE&quot; and &quot;HEAD&quot;.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="params"><span class="type-signature"></span>params<span class="type-signature"> :?Object.&lt;!<a href="global.html#jrt#.AjaxRequestValue">jrt.AjaxRequestValue</a>>|undefined</span></h4>
+
+
+
+
+<div class="description">
+    <p>The request parameters as a plain object.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">?Object.&lt;!<a href="global.html#jrt#.AjaxRequestValue">jrt.AjaxRequestValue</a>></span>
+|
+
+<span class="param-type">undefined</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="responseType"><span class="type-signature"></span>responseType<span class="type-signature"> :string|undefined</span></h4>
+
+
+
+
+<div class="description">
+    <p>The response type is inferred from the response's content type by default, but you
+set this property to override it (it can be any type allowed by XMLHttpRequest).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="safe"><span class="type-signature"></span>safe<span class="type-signature"> :boolean|undefined</span></h4>
+
+
+
+
+<div class="description">
+    <p>This property is only used when the app version is &quot;TEST&quot;. When this is the case,
+all unsafe requests are simulated with a successful empty response. By default only
+&quot;GET&quot; and &quot;HEAD&quot; requests are considered safe, but you can override this by setting
+this property.</p>
 </div>
 
 
@@ -453,6 +577,277 @@ and stops running when #finish is called or a new page is requested.</p>
         <li>
             
 <span class="param-type">boolean</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="serviceName"><span class="type-signature"></span>serviceName<span class="type-signature"> :string|undefined</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="servicePath"><span class="type-signature"></span>servicePath<span class="type-signature"> :string|undefined</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="timeout"><span class="type-signature"></span>timeout<span class="type-signature"> :number|undefined</span></h4>
+
+
+
+
+<div class="description">
+    <p>The response timeout in milliseconds (the default is 30000). Specify 0 for no timeout.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="xhr"><span class="type-signature"></span>xhr<span class="type-signature"> :XMLHttpRequest|undefined</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">XMLHttpRequest</span>
+|
+
+<span class="param-type">undefined</span>
 
 
         </li>
@@ -505,500 +900,6 @@ and stops running when #finish is called or a new page is requested.</p>
         
     
 
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="actionFinished"><span class="type-signature"></span>actionFinished<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="dialogClosed"><span class="type-signature"></span>dialogClosed<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="finish"><span class="type-signature"></span>finish<span class="signature">(result<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Ends execution of this action and calls the requester's jrt.Target#actionFinished method.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>result</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    null
-                
-                </td>
-            
-
-            <td class="description last"><p>The action's result (null if not specified).</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>True on success and false if the action is not running.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="requested"><span class="type-signature"></span>requested<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="toString"><span class="type-signature"></span>toString<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
     
 
     
