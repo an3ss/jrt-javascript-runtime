@@ -126,7 +126,7 @@ jrt.App = class extends jrt.Block {
     * @final
     * @return {?jrt.LocaleBundle}
     */
-   get locale() {}
+   getLocale() {}
 
    /**
     * @protected
@@ -833,7 +833,7 @@ jrt.PromptBox = class extends jrt.SystemDialogBox {
    /**
     * @return {?boolean}
     */
-   static get offline() {}
+   static isOffline() {}
 
    /**
     * @throws {!jrt.JrtError}
@@ -1023,5 +1023,5 @@ jrt.View = class extends jrt.Block {
     * @abstract
     * @return {boolean}
     */
-   get visible() {}
+   isVisible() {}
 };

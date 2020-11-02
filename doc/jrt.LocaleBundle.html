@@ -29,15 +29,16 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="global.html#jrt">jrt</a>.</span>LocaleBundle<span class="signature">()</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>LocaleBundle<span class="signature">(lang<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>A class to manage app translations.</p>
-<p>The .setConfiguration method must be called first to define the languages
-and translation domains to use. Then the .setBundle method is used to create
-an instance and translate all translatable text in the HTML page.</p>
-<p>Translations can be obtained at runtime by message id with #getString or by
-reference text with #translate. Both methods support variable substitution
-and singular forms.</p></div>
+            <div class="class-description"><p>A class to manage the app's translations to different languages.</p>
+<p>The <a href="jrt.LocaleBundle.html#.setConfiguration"><code>setConfiguration</code></a> method must be called
+first to define the languages and translation domains to use. Then the
+<a href="jrt.LocaleBundle.html#.setBundle"><code>setBundle</code></a> method is used to create an instance
+and translate all translatable text in the HTML page.</p>
+<p>Translations can be obtained at runtime by message id with <a href="jrt.LocaleBundle.html#getString"><code>getString</code></a>
+or by reference text with <a href="jrt.LocaleBundle.html#translate"><code>translate</code></a>. Both methods
+support variable substitution and singular forms.</p></div>
         
     
 </header>
@@ -52,19 +53,85 @@ and singular forms.</p></div>
     
 
     
-    <h4 class="name" id="LocaleBundle"><span class="type-signature"></span>new LocaleBundle<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="LocaleBundle"><span class="type-signature"></span>new LocaleBundle<span class="signature">(lang<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>Loads the translation bundle for the specified language. If the bundle file cannot
+be loaded, logs an error in the console and uses an empty bundle for that language.</p>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lang</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -220,11 +287,12 @@ is supported, the first supported language is used as the preferred language.</p
 
 <div class="description">
     <p>The reference language for direct text translations. This can be set either in
-the HTML element's 'lang' attribute or with the .setConfiguration method.</p>
+the <code>HTML</code> element's <code>lang</code> attribute or with
+<a href="jrt.LocaleBundle.html#.setConfiguration"><code>setConfiguration</code></a>.</p>
 <p>The reference language is used when translating by reference text instead of
-by message id. This is done in the #translate method and also in the
-automatic translation of HTML &quot;string&quot; elements. If no reference language is
-defined, all reference text is treated as a message id.</p>
+by message id. This is done in the <a href="jrt.LocaleBundle.html#translate"><code>translate</code></a>
+method and also in the automatic translation of HTML &quot;string&quot; elements. If no
+reference language is defined, all reference text is treated as a message id.</p>
 </div>
 
 
@@ -291,7 +359,7 @@ defined, all reference text is treated as a message id.</p>
 
 
 <div class="description">
-    <p>List of supported languages. This must be set with the .setConfiguration method.</p>
+    <p>List of supported languages. This must be set with <a href="jrt.LocaleBundle.html#.setConfiguration"><code>setConfiguration</code></a>.</p>
 </div>
 
 
@@ -437,36 +505,43 @@ defined, all reference text is treated as a message id.</p>
 
 
 <div class="description">
-    <p>Loads the translation bundle for the specified language. If the language is &quot;&quot; or
-null, or if it's not supported, then .preferredLanguage is used.</p>
+    <p>Loads the translation bundle for the specified language. If <code>lang</code> is empty or
+null, or if it's not supported, then <a href="jrt.LocaleBundle.html#.preferredLanguage"><code>preferredLanguage</code></a>
+is used.</p>
 <p>This method translates the text content in HTML &quot;string&quot; elements. This elements are:</p>
 <ul>
-<li>Elements with the 'translate' attribute set to &quot;yes&quot;.</li>
-<li>S elements, when their only content is text (make sure to remove the CSS line-through
-style if you use these).</li>
-<li>The folloging elements, when their only content is text: H1 to H6, SUMMARY, TD in a THEAD,
-TH, A, BUTTON, LABEL and OPTION. If text in any of this elements should not be translated,
-set their 'translate' attribute to &quot;no&quot; (either directly or in some ancestor element).</li>
-<li>INPUT and TEXTAREA elements with a 'placeholder' attribute (only this is translated).</li>
-<li>Elements with the 'data-msgid' attribute.</li>
+<li>Elements with the <code>translate</code> attribute set to &quot;<b>yes</b>&quot;.</li>
+<li><code>S</code> elements, when their only content is text (make sure to remove
+the CSS line-through style if you use these).</li>
+<li>The folloging elements, when their only content is text: <code>H1</code> to <code>H6</code>,
+<code>SUMMARY</code>, <code>TD</code> in a <code>THEAD</code>, <code>TH</code>, <code>A</code>,
+<code>BUTTON</code>, <code>LABEL</code> and <code>OPTION</code>. If text in any of this
+elements should not be translated, set their <code>translate</code> attribute to &quot;<b>no</b>&quot;
+(either directly or in some ancestor element).</li>
+<li><code>INPUT</code> and <code>TEXTAREA</code> elements with a <code>placeholder</code>
+attribute (only this is translated).</li>
+<li>Elements with the <code>data-msgid</code> attribute.</li>
 </ul>
-<p>Elements with a 'data-msgid' attribute are translated using that message id. If the
-corresponding message string is an array and the element is UL or OL, then the element is
-filled with LI elements (one per string in the array). Otherwise, it is filled with P elements.</p>
-<p>Elements without a &quot;data-msgid&quot; attribute are translated using the element's text
-content (or placeholder value) as reference text.</p>
-<p>This method also sets the 'href' attribute of localized links, that is, links which have
-one 'data-href-xx' attribute defined for every supported language 'xx'. If the URL for
-the current locale language is not found, the URL in 'href' is used, if defined.</p>
-<p>This method will also fill any HTML include elements which are found (replacing their
-previous contents). Include elements specify the document fragment to include with the
-'data-docid' attribute. Each document fragment must be defined in a subdirectory within
-the translation domain directory. The name of a document subdirectory must be the
-document id, and the name of the documents within must be [docid].[lang].html.</p>
-<p>Parameters for the included document can be specified with 'data-[name]' attributes.
-The specified value will be inserted in elements that have a matching 'data-name' attribute.
-If the element receiving the value is IMG or A, then the value is used as the element's
-'src' or 'href' attribute value. If the element is INPUT, it is replaced with the value.
+<p>Elements with a <code>data-msgid</code> attribute are translated using that message id. If the
+corresponding message string is an array and the element is <code>UL</code> or <code>OL</code>,
+then the element is filled with <code>LI</code> elements (one per string in the array).
+Otherwise, it is filled with <code>P</code> elements.</p>
+<p>Elements without a <code>data-msgid</code> attribute are translated using the element's text
+content (or <code>placeholder</code> value) as reference text.</p>
+<p>This method also sets the <code>href</code> attribute of localized links, that is,
+links which have one <code>data-href-<i>lang</i></code> attribute defined for every supported
+language <i>lang</i>. If the URL for the current locale language is not found, the URL
+from <code>href</code> is used, if defined.</p>
+<p>This method will also fill any &quot;include elements&quot; which are found (replacing their
+previous contents). Include elements specify a document fragment to be included using the
+<code>data-docid</code> attribute. Each document fragment must be defined in a subdirectory
+within the translation domain directory. The name of a document subdirectory must be
+the document id, and the name of the documents within must be <code><i>docid</i>.<i>lang</i>.html</code>.</p>
+<p>Parameters for the included document can be specified with <code>data-<i>name</i></code>
+attributes. The specified value will be inserted in elements that have a matching
+<code>data-<i>name</i></code> attribute. If the element receiving the value is <code>IMG</code>
+or <code>A</code>, then the value is used as the element's <code>src</code> or <code>href</code>
+attribute value. If the element is <code>INPUT</code>, it is replaced with the value.
 In any other case, the element's contents are replaced with the value.</p>
 </div>
 
@@ -597,7 +672,7 @@ In any other case, the element's contents are replaced with the value.</p>
         
 <div class="param-desc">
     <p>Returns the loaded message bundle instance. You can always
-get the currently loaded locale bundle from <a href="jrt.App.html#locale">jrt.App#locale</a>.</p>
+get the currently loaded locale bundle with <a href="jrt.App.html#getLocale"><code>jrt.App#getLocale</code></a>.</p>
 </div>
 
 
@@ -635,19 +710,22 @@ get the currently loaded locale bundle from <a href="jrt.App.html#locale">jrt.Ap
 
 <div class="description">
     <p>This method should be used to set the locale bundles configuration, before calling
-.setBundle (otherwise, it will be called implicitly with no parameters).</p>
+<a href="jrt.LocaleBundle.html#.setBundle"><code>setBundle</code></a> (otherwise, it will be called implicitly
+with no parameters).</p>
 <p>If the list of supported languages is not specified, then only the reference
 language will be supported.</p>
 <p>If a reference language is not specified, then the reference language is assumed
-to be the document's declared language (the HTML element's 'lang' attribute value).</p>
-<p>Translations must be defined in the '/locale' directory with a set of JSON translation
-files, one for each supported language, which must be named 'strings.[lang].js'.
-Each translation file must contain an array of [key, translation] pairs, where the key
-can be either a message id or a reference text and the value is the translated text.</p>
-<p>The set of translation files found in '/locale' is the default translation domain.
-Alternatively, you can define different translation domains in subdirectories of
-'/locale'. When doing so, the 'domains' parameter must specify the list of domains
-to load when loading a translation bundle for the app.</p>
+to be the document's declared language (the <code>HTML</code> element's <code>lang</code>
+attribute value).</p>
+<p>Translations must be defined in the <code>/locale</code> directory with a set of JSON
+translation files, one for each supported language, which must be named <code>strings.<i>lang</i>.js</code>.
+Each translation file must contain an array of <code>[<i>key</i>, <i>translation</i>]</code>
+pairs, where the key can be either a message id or a reference text and the value
+is the translated text.</p>
+<p>The set of translation files found in <code>/locale</code> is the default translation
+domain. Alternatively, you can define different translation domains in subdirectories
+of <code>/locale</code>. When doing so, the <code>domains</code> parameter must specify
+the list of domains to load when loading a translation bundle for the app.</p>
 </div>
 
 
@@ -861,7 +939,8 @@ to load when loading a translation bundle for the app.</p>
 <div class="description">
     <p>Returns the translation for the specified message id in the currently loaded language,
 or null if it's not defined.</p>
-<p>To get the translation for a reference text, use the #translate method instead.</p>
+<p>To get the translation for a reference text, use the <a href="jrt.LocaleBundle.html#translate"><code>translate</code></a>
+method instead.</p>
 </div>
 
 
@@ -1123,8 +1202,9 @@ or null if it's not defined.</p>
 
 
 <div class="description">
-    <p>This method must be used instead of #getString when the message to be translated
-is an array of strings. Substitutions are not supported in this case.</p>
+    <p>This method must be used instead of <a href="jrt.LocaleBundle.html#getString"><code>getString</code></a>
+when the message to be translated is an array of strings. Substitutions are not
+supported in this case.</p>
 </div>
 
 
@@ -1310,12 +1390,13 @@ is an array of strings. Substitutions are not supported in this case.</p>
     <p>Returns the translation for the specified text in the currently loaded language.
 If no translation exists, the text is returned untranslated (but with substitutions
 applied, if specified).</p>
-<p>Substitutions in the translated string can be done with the 'substitution' parameter.
-If a number or a string is specified, then it will replace the first appearance of &quot;%s&quot;
-in the translated string. If 'substitution' is a string array, then each of its values
-will replace each appearance &quot;%s&quot; in the translated string. Note that substitution
-strings must be translated beforehand, if they require so.</p>
-<p>To get the translation for a message id, use the #getString method.</p>
+<p>Substitutions in the translated string can be done with the <code>substitution</code>
+parameter. If a number or a string is specified, then it will replace the first
+appearance of &quot;<b>%s</b>&quot; in the translated string. If <code>substitution</code>
+is a string array, then each of its values will replace each appearance &quot;<b>%s</b>&quot;
+in the translated string. Note that substitution strings must be translated beforehand,
+if they require so.</p>
+<p>To get the translation for a message id, use <a href="jrt.LocaleBundle.html#getString"><code>getString</code></a>.</p>
 </div>
 
 
@@ -1550,13 +1631,13 @@ strings must be translated beforehand, if they require so.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#jrt">jrt</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="jrt.html">jrt</a></li></ul><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.JrtError.html">JrtError</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Oct 30 2020 09:27:36 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 08:07:49 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -29,12 +29,13 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="global.html#jrt">jrt</a>.</span>LocalStorage<span class="signature">(dataKey, properties<span class="signature-attributes">opt, nullable</span>, compressed<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>LocalStorage<span class="signature">(dataKey, properties<span class="signature-attributes">opt, nullable</span>, compressed<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
         
             <div class="class-description"><p>Class for storing string and object items in local storage, optionally compressed with LZW.
 Objects are stored as a JSON string. Set and Map properties are supported transparently.</p>
 <p>Items can be stored as &quot;important&quot;. Important items are not removed when making room for
-a new item when storage is full (see .setItem, .setObject and #save).
+a new item when storage is full (see <a href="jrt.LocalStorage.html#.setItem"><code>setItem</code></a>,
+<a href="jrt.LocalStorage.html#.setObject"><code>setObject</code></a> and <a href="jrt.LocalStorage.html#save"><code>save</code></a>).
 Note that important items are implemented internally by prepending their key with &quot;!&quot;,
 so you should not use &quot;!&quot; as the first character of your item's keys.</p></div>
         
@@ -277,6 +278,17 @@ so you should not use &quot;!&quot; as the first character of your item's keys.<
     </div>
 
     
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="jrt.Serializable.html">jrt.Serializable</a></li>
+    </ul>
+
+
+    
 
     
 
@@ -290,6 +302,78 @@ so you should not use &quot;!&quot; as the first character of your item's keys.<
 
     
         <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="app"><span class="type-signature">(protected, non-null) </span>app<span class="type-signature"> :<a href="jrt.App.html">jrt.App</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Reference to the app instance.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="jrt.App.html">jrt.App</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.Serializable.html#app">jrt.Serializable#app</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
 
         
             
@@ -807,7 +891,7 @@ so you should not use &quot;!&quot; as the first character of your item's keys.<
 
 <div class="description">
     <p>Retrieves an object from local storage. The object must have been previously stored
-as a JSON string with .setObject.</p>
+as a JSON string with <a href="jrt.LocalStorage.html#.setObject"><code>setObject</code></a>.</p>
 </div>
 
 
@@ -2056,6 +2140,112 @@ The default implementation just returns a copy of this object's properties.</p>
     
 
     
+    <h4 class="name" id="getProperties"><span class="type-signature"></span>getProperties<span class="signature">()</span><span class="type-signature"> &rarr; (non-null) {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Returns a new object containing this object's serializable properties.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.Serializable.html#getProperties">jrt.Serializable#getProperties</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="import"><span class="type-signature">(protected) </span>import<span class="signature">(storedData<span class="signature-attributes">non-null</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
@@ -2324,8 +2514,9 @@ if all serializable properties have a null or undefined value.</p>
     <p>Sets this object's properties from the local storage object (stored as JSON).
 If the object key is not present in local storage, the object not modified.
 If the stored object's representation differs from this object's representation,
-then the #import method must be implemented to make the conversion.
-If the object cannot be imported then local storage is deleted and the object is reset.</p>
+then the <a href="jrt.LocalStorage.html#import"><code>import</code></a> method must be implemented to
+make the conversion. If the object cannot be imported then local storage is
+deleted and the object is reset.</p>
 </div>
 
 
@@ -2514,7 +2705,7 @@ If the object cannot be imported then local storage is deleted and the object is
 
 <div class="description">
     <p>Resets the serializable properties in this object. The default implementation assigns
-null to every property. A reset object should always result in the #isEmpty
+null to every property. A reset object should always result in the <a href="jrt.LocalStorage.html#isEmpty"><code>isEmpty</code></a>
 method returning true.</p>
 </div>
 
@@ -2599,9 +2790,10 @@ method returning true.</p>
 
 <div class="description">
     <p>Saves the object's own properties in local storage as JSON. If the stored object's
-properties differ from this object's properties, then #export must be implemented
-to make the conversion. Note that the object will not be saved but instead will be
-removed if jrt.Serializable#isEmpty returns true or #export returns null.</p>
+properties differ from this object's properties, then <a href="jrt.LocalStorage.html#export"><code>export</code></a>
+must be implemented to make the conversion. Note that the object will not be saved
+but instead will be removed if <code>jrt.Serializable#isEmpty</code> returns true or
+<a href="jrt.LocalStorage.html#export"><code>export</code></a> returns null.</p>
 <p>If there is not enough local storage left, this method it will try to make room for
 the object by deleting non-important items (in an unspecified order).</p>
 </div>
@@ -2742,6 +2934,143 @@ the object by deleting non-important items (in an unspecified order).</p>
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="setProperties"><span class="type-signature"></span>setProperties<span class="signature">(properties<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Copies the specified object's enumerable properties to this object.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>properties</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.Serializable.html#setProperties">jrt.Serializable#setProperties</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -2757,13 +3086,13 @@ the object by deleting non-important items (in an unspecified order).</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#jrt">jrt</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="jrt.html">jrt</a></li></ul><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.JrtError.html">JrtError</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Oct 30 2020 09:27:36 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 08:07:49 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

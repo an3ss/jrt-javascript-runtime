@@ -29,11 +29,11 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="global.html#jrt">jrt</a>.</span>AlertBox<span class="signature">()</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>AlertBox<span class="signature">(message, options<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"></span></h2>
         
             <div class="class-description"><p>Implements an alert dialog box with a message, an optional title and an &quot;Ok&quot; button.
 The dialogs's return value is always null.</p>
-<p>This class must be instanced with the <a href="jrt.SystemDialogBox.html#.alert">jrt.SystemDialogBox.alert</a> method.</p></div>
+<p>This class must be instanced with the <a href="jrt.SystemDialogBox.html#.alert"><code>jrt.SystemDialogBox.alert</code></a> method.</p></div>
         
     
 </header>
@@ -48,7 +48,7 @@ The dialogs's return value is always null.</p>
     
 
     
-    <h4 class="name" id="AlertBox"><span class="type-signature"></span>new AlertBox<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="AlertBox"><span class="type-signature"></span>new AlertBox<span class="signature">(message, options<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -61,6 +61,103 @@ The dialogs's return value is always null.</p>
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">!Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.SystemDialogBox.html#.Options">jrt.SystemDialogBox.Options</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -125,6 +222,15 @@ The dialogs's return value is always null.</p>
     </div>
 
     
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="jrt.SystemDialogBox.html">jrt.SystemDialogBox</a></li>
+    </ul>
+
 
     
 
@@ -138,6 +244,2337 @@ The dialogs's return value is always null.</p>
 
     
 
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="app"><span class="type-signature">(protected, constant, non-null) </span>app<span class="type-signature"> :<a href="jrt.App.html">jrt.App</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Reference to the app instance, just for convenience.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="jrt.App.html">jrt.App</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#app">jrt.SystemDialogBox#app</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="buttons"><span class="type-signature">(protected, non-null) </span>buttons<span class="type-signature"> :HTMLElement</span></h4>
+
+
+
+
+<div class="description">
+    <p>The paragraph that contains the dialog's buttons.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">HTMLElement</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#buttons">jrt.SystemDialogBox#buttons</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="dynamic"><span class="type-signature">(protected, constant) </span>dynamic<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#dynamic">jrt.SystemDialogBox#dynamic</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="form"><span class="type-signature">(nullable) </span>form<span class="type-signature"> :<a href="jrt.Form.html">jrt.Form</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>The first <code>FORM</code> element present in the dialog.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="jrt.Form.html">jrt.Form</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#form">jrt.SystemDialogBox#form</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="id"><span class="type-signature">(constant) </span>id<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    <p>The view id, which is the same as the element id.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#id">jrt.SystemDialogBox#id</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="options"><span class="type-signature">(protected, non-null) </span>options<span class="type-signature"> :<a href="jrt.SystemDialogBox.html#.Options">jrt.SystemDialogBox.Options</a></span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="jrt.SystemDialogBox.html#.Options">jrt.SystemDialogBox.Options</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#options">jrt.SystemDialogBox#options</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="para"><span class="type-signature">(protected, non-null) </span>para<span class="type-signature"> :HTMLElement</span></h4>
+
+
+
+
+<div class="description">
+    <p>The last text paragraph in the dialog box.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">HTMLElement</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#para">jrt.SystemDialogBox#para</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="parent"><span class="type-signature">(nullable) </span>parent<span class="type-signature"> :<a href="jrt.View.html">jrt.View</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>The view that opened this dialog (which is also the view that lays behind it).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="jrt.View.html">jrt.View</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#parent">jrt.SystemDialogBox#parent</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="returnValue"><span class="type-signature">(nullable) </span>returnValue<span class="type-signature"> :<a href="jrt.html#.DialogReturnValue">jrt.DialogReturnValue</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>The return value for the dialog. It can be set with <a href="jrt.Modal.html#close"><code>close</code></a>
+or by submitting a form with the &quot;dialog&quot; method from within the dialog.
+If not set, it will be null.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="jrt.html#.DialogReturnValue">jrt.DialogReturnValue</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#returnValue">jrt.SystemDialogBox#returnValue</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="appendForm"><span class="type-signature">(protected) </span>appendForm<span class="signature">(message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Creates the dialog form and its common elements.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">!Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#appendForm">jrt.SystemDialogBox#appendForm</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="close"><span class="type-signature"></span>close<span class="signature">(returnValue<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Closes the modal dialog. If no return value is specified, the current return value remains.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>returnValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.html#.DialogReturnValue">jrt.DialogReturnValue</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The return value for the dialog.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#close">jrt.SystemDialogBox#close</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>true If the dialog was actually closed.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="handleEvent"><span class="type-signature">(protected) </span>handleEvent<span class="signature">(e<span class="signature-attributes">non-null</span>, label<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>This method is called when an event registered with <a href="jrt.Element.html#listenToEvent"><code>listenToEvent</code></a>
+is triggered.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>e</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Event</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The event object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The label specified when registering the event.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#handleEvent">jrt.SystemDialogBox#handleEvent</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ignoreEvent"><span class="type-signature">(protected) </span>ignoreEvent<span class="signature">(eventType, element<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Stops listenig to the specified event type on the specified element.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The event type to listen to.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The HTML element to stop listening to. Defaults to this element.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#ignoreEvent">jrt.SystemDialogBox#ignoreEvent</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="listenToEvent"><span class="type-signature">(protected) </span>listenToEvent<span class="signature">(eventType, element<span class="signature-attributes">opt, nullable</span>, label<span class="signature-attributes">opt, nullable</span>, useCapture<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets this object as the event listener for the specified event type and element.
+The <a href="jrt.Element.html#handleEvent"><code>handleEvent</code></a> method is called when the event occurs.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The event type to listen to.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The HTML element to listen to. Defaults to this element.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional label passed to the event handler.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>useCapture</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#listenToEvent">jrt.SystemDialogBox#listenToEvent</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processResponse"><span class="type-signature">(protected) </span>processResponse<span class="signature">(req<span class="signature-attributes">non-null</span>, status, response<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Implement this method to process the response received after a call to <a href="jrt.Ajax.html#sendRequest"><code>sendRequest</code></a>.
+The response data type depends on the <code>responseType</code> property specified in the request.</p>
+<p>The response status can be &quot;<b>success</b>&quot;, &quot;<b>server-error</b>&quot;, &quot;<b>type-error</b>&quot;
+(when the specified response type does not match the received data), &quot;<b>error</b>&quot;
+(if there is a connection error), &quot;<b>timeout</b>&quot; or &quot;<b>offline</b>&quot;. Note that
+the &quot;<b>offline</b>&quot; status is not reliable in all devices, so an &quot;<b>error</b>&quot;
+status may be received when offline.</p>
+<p>The default implementation does nothing.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.AjaxRequest.html">jrt.AjaxRequest</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The request object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The response status (see method description).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.html#.AjaxResponse">jrt.AjaxResponse</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The server response. This will be null on error or timeout.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#processResponse">jrt.SystemDialogBox#processResponse</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="query"><span class="type-signature"></span>query<span class="signature">(selector, baseElement)</span><span class="type-signature"> &rarr; (nullable) {HTMLElement}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Returns the first element that matches the specified selector. If no base element
+is specified, this block is used as base element. Returns null if no element is found.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The CSS selector.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>baseElement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+|
+
+<span class="param-type">DocumentFragment</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional base element.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#query">jrt.SystemDialogBox#query</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">HTMLElement</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="queryAll"><span class="type-signature"></span>queryAll<span class="signature">(selector, baseElement)</span><span class="type-signature"> &rarr; (non-null) {NodeList.&lt;!HTMLElement>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Returns all elements that match the specified selector. If no base element
+is specified, this element is used.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The CSS selector.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>baseElement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+|
+
+<span class="param-type">DocumentFragment</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional base element.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#queryAll">jrt.SystemDialogBox#queryAll</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">NodeList.&lt;!HTMLElement></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sendRequest"><span class="type-signature"></span>sendRequest<span class="signature">(req<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sends an asynchronous AJAX request to the URL specified in <code>req</code>'. The supported
+methods are &quot;GET&quot; (the default), &quot;POST&quot;, &quot;PUT&quot;, &quot;PATCH&quot;, &quot;DELETE&quot; and &quot;HEAD&quot;.
+The response will be passed to <a href="jrt.Ajax.html#processResponse"><code>processResponse</code></a>.
+The expected response type can be specified with the <code>responseType</code>
+property in the specified request (&quot;<b>json</b>&quot; by default).</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.AjaxRequest.html">jrt.AjaxRequest</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#sendRequest">jrt.SystemDialogBox#sendRequest</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If any of the request parameters is invalid.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+
+
+        
     
 
     
@@ -153,13 +2590,13 @@ The dialogs's return value is always null.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#jrt">jrt</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="jrt.html">jrt</a></li></ul><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.JrtError.html">JrtError</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Oct 30 2020 09:27:36 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 08:07:48 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -29,40 +29,45 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="global.html#jrt">jrt</a>.</span>HashUrl<span class="signature">(id, params<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>HashUrl<span class="signature">(id, params<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"></span></h2>
         
             <div class="class-description"><p>Hash URL object, with parser and formatter methods.</p>
 <p>An app can request a page, open a dialog or execute an action directly from HTML using
-a hash URL, that is, a hash (aka fragment identifier) that contains the target's id
-followed by optional parameters, for example: &quot;#TargetPage?param1=value1&amp;param2=value2&quot;.</p>
+a hash URL, that is, a URL fragment identifier that contains the target's id followed
+by optional parameters, for example:</p>
+<pre>
+  #TargetPage?param1=value1&amp;param2=value2
+</pre>
 <p>Hash URLs can be used in the following HTML elements:</p>
 <ul>
 <li>
-<p>As the 'href' attribute of a &quot;link element&quot;, that is, an A or AREA element.</p>
+<p>As the <code>href</code> attribute of a link element, that is, an <code>A</code> or
+<code>AREA</code> element.</p>
 </li>
 <li>
-<p>As the 'action' attribute of a FORM element. Note that if the 'action' attribute is
-not specified, then the form will not be submitted unless a submit button with a
-'formaction' is used. This can be used to prevent the automatic submission that occurs
-when a control is activated with the Enter key.</p>
+<p>As the <code>action</code> attribute of a <code>FORM</code> element. Note that if
+the <code>action</code> attribute is not specified, then the form will not be submitted
+unless a submit button with a <code>formaction</code> is used. This can be used to
+prevent the automatic submission that occurs when a control is activated with the Enter key.</p>
 </li>
 <li>
-<p>As the 'formaction' attribute of a BUTTON of type &quot;submit&quot;, which will override
-its form's action.</p>
+<p>As the <code>formaction</code> attribute of a <code>BUTTON</code> of type &quot;<b>submit</b>&quot;,
+which will override its form's action.</p>
 </li>
 <li>
-<p>As the 'formaction' attribute of a BUTTON of type &quot;button&quot;. This is called a &quot;link
-button&quot;, since it works similarly to a link. The difference is that, if the button
-belongs to a form, the form values are added to the button's target URL, including
-the button's name/value (if the button doesn't belong to a form, only the button's
-name/value are added to the target URL). Note that link buttons only support hash
-URLs, so a 'formaction' attribute with an external (regular) URLs will be ignored.</p>
+<p>As the <code>formaction</code> attribute of a <code>BUTTON</code> of type &quot;<b>button</b>&quot;.
+This is called a &quot;link button&quot;, since it works similarly to a link. The difference is
+that, if the button belongs to a form, the form values are added to the button's target
+URL, including the button's name/value (if the button doesn't belong to a form, only
+the button's name/value are added to the target URL). Note that link buttons only support
+hash URLs, so a <code>formaction</code> attribute with an external (regular) URLs will
+be ignored.</p>
 </li>
 </ul>
 <p>An empty URL, or a URL consisting of parameters only, is also considered a hash URL.
 This URL will generate a request to the current view (instead of reloading the app).</p>
-<p>The &quot;#back&quot; URL implements a built-in action that makes the app go back. Following this
-URL has the same effect as calling <a href="jrt.App.html#navigateBack">jrt.App#navigateBack</a>.</p></div>
+<p>The <code>#back</code> URL implements a built-in action that makes the app go back.
+Following this URL has the same effect as calling <a href="jrt.App.html#navigateBack"><code>jrt.App#navigateBack</code></a>.</p></div>
         
     
 </header>
@@ -160,7 +165,7 @@ URL has the same effect as calling <a href="jrt.App.html#navigateBack">jrt.App#n
             <td class="type">
             
                 
-<span class="param-type">Object.&lt;!<a href="global.html#jrt#.FormValue">jrt.FormValue</a>></span>
+<span class="param-type">Object.&lt;!<a href="jrt.html#.FormValue">jrt.FormValue</a>></span>
 
 
             
@@ -335,7 +340,7 @@ URL has the same effect as calling <a href="jrt.App.html#navigateBack">jrt.App#n
 
         
             
-<h4 class="name" id="params"><span class="type-signature">(non-null) </span>params<span class="type-signature"> :Object.&lt;!<a href="global.html#jrt#.FormValue">jrt.FormValue</a>></span></h4>
+<h4 class="name" id="params"><span class="type-signature">(non-null) </span>params<span class="type-signature"> :Object.&lt;!<a href="jrt.html#.FormValue">jrt.FormValue</a>></span></h4>
 
 
 
@@ -350,7 +355,7 @@ URL has the same effect as calling <a href="jrt.App.html#navigateBack">jrt.App#n
     <ul>
         <li>
             
-<span class="param-type">Object.&lt;!<a href="global.html#jrt#.FormValue">jrt.FormValue</a>></span>
+<span class="param-type">Object.&lt;!<a href="jrt.html#.FormValue">jrt.FormValue</a>></span>
 
 
         </li>
@@ -421,7 +426,7 @@ URL has the same effect as calling <a href="jrt.App.html#navigateBack">jrt.App#n
 
 <div class="description">
     <p>Factory method that extracts the target id and params from the specified hash URL.
-Returns null if the 'hash' parameter is not a valid hash URL.</p>
+Returns null if the <code>hash</code> parameter is not a valid hash URL.</p>
 </div>
 
 
@@ -677,13 +682,13 @@ an empty URL. Note that the returned hash is not URL-encoded.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#jrt">jrt</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="jrt.html">jrt</a></li></ul><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.JrtError.html">JrtError</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Oct 30 2020 09:27:36 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 08:07:48 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

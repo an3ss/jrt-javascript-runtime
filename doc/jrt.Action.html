@@ -29,7 +29,7 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="global.html#jrt">jrt</a>.</span>Action<span class="signature">()</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>Action<span class="signature">(id)</span><span class="type-signature"></span></h2>
         
             <div class="class-description"><p>Base class for app actions.</p></div>
         
@@ -46,7 +46,7 @@
     
 
     
-    <h4 class="name" id="Action"><span class="type-signature"></span>new Action<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Action"><span class="type-signature"></span>new Action<span class="signature">(id)</span><span class="type-signature"></span></h4>
     
 
     
@@ -59,6 +59,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -130,6 +179,17 @@
     </div>
 
     
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="jrt.Ajax.html">jrt.Ajax</a></li>
+    </ul>
+
+
+    
 
     
 
@@ -143,6 +203,78 @@
 
     
         <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="app"><span class="type-signature">(protected, constant, non-null) </span>app<span class="type-signature"> :<a href="jrt.App.html">jrt.App</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Reference to the app instance, just for convenience.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="jrt.App.html">jrt.App</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.Ajax.html#app">jrt.Ajax#app</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
 
         
             
@@ -374,7 +506,7 @@
 
 
 <div class="description">
-    <p>This value is set when a value is passed to the #finish method.
+    <p>This value is set when a value is passed to the <a href="jrt.Action.html#finish"><code>finish</code></a> method.
 If no value is passed, the result will be null.</p>
 </div>
 
@@ -443,7 +575,8 @@ If no value is passed, the result will be null.</p>
 
 <div class="description">
     <p>True if this action is running. An action starts runnning when it is requested,
-and stops running when #finish is called or a new page is requested.</p>
+and stops running when <a href="jrt.Action.html#finish"><code>finish</code></a> is called or a new page
+is requested.</p>
 </div>
 
 
@@ -514,19 +647,74 @@ and stops running when #finish is called or a new page is requested.</p>
     
 
     
-    <h4 class="name" id="actionFinished"><span class="type-signature"></span>actionFinished<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="actionFinished"><span class="type-signature"></span>actionFinished<span class="signature">(action<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>This method is called when an action that was requested from this target is finished
+explicitly (with the <a href="jrt.Action.html#finish"><code>jrt.Action#finish</code></a> method).</p>
+<p>This base implementation does nothing. Override as needed.</p>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>action</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.Action.html">jrt.Action</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -545,6 +733,13 @@ and stops running when #finish is called or a new page is requested.</p>
 
     
 
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.Target.html#actionFinished">jrt.Target#actionFinished</a></li>
+        
+    </ul></dd>
     
 
     
@@ -593,19 +788,75 @@ and stops running when #finish is called or a new page is requested.</p>
     
 
     
-    <h4 class="name" id="dialogClosed"><span class="type-signature"></span>dialogClosed<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="dialogClosed"><span class="type-signature"></span>dialogClosed<span class="signature">(dialog<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>This method is called when a dialog that was opened from this target is closed.
+A dialog is usually closed by submitting a form with the &quot;dialog&quot; method. It can
+also be closed with <a href="jrt.Modal.html#close"><code>jrt.Modal#close</code></a> or with a <code>#back</code> URL.</p>
+<p>This base implementation does nothing. Override as needed.</p>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dialog</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.Modal.html">jrt.Modal</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -624,6 +875,13 @@ and stops running when #finish is called or a new page is requested.</p>
 
     
 
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.Target.html#dialogClosed">jrt.Target#dialogClosed</a></li>
+        
+    </ul></dd>
     
 
     
@@ -680,7 +938,7 @@ and stops running when #finish is called or a new page is requested.</p>
 
 
 <div class="description">
-    <p>Ends execution of this action and calls the requester's jrt.Target#actionFinished method.</p>
+    <p>Ends execution of this action and calls the requester's <a href="jrt.Target.html#actionFinished"><code>jrt.Target#actionFinished</code></a> method.</p>
 </div>
 
 
@@ -846,19 +1104,153 @@ and stops running when #finish is called or a new page is requested.</p>
     
 
     
-    <h4 class="name" id="requested"><span class="type-signature"></span>requested<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="processResponse"><span class="type-signature">(protected) </span>processResponse<span class="signature">(req<span class="signature-attributes">non-null</span>, status, response<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>Implement this method to process the response received after a call to <a href="jrt.Ajax.html#sendRequest"><code>sendRequest</code></a>.
+The response data type depends on the <code>responseType</code> property specified in the request.</p>
+<p>The response status can be &quot;<b>success</b>&quot;, &quot;<b>server-error</b>&quot;, &quot;<b>type-error</b>&quot;
+(when the specified response type does not match the received data), &quot;<b>error</b>&quot;
+(if there is a connection error), &quot;<b>timeout</b>&quot; or &quot;<b>offline</b>&quot;. Note that
+the &quot;<b>offline</b>&quot; status is not reliable in all devices, so an &quot;<b>error</b>&quot;
+status may be received when offline.</p>
+<p>The default implementation does nothing.</p>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.AjaxRequest.html">jrt.AjaxRequest</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The request object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The response status (see method description).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.html#.AjaxResponse">jrt.AjaxResponse</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The server response. This will be null on error or timeout.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -873,6 +1265,11 @@ and stops running when #finish is called or a new page is requested.</p>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.Ajax.html#processResponse">jrt.Ajax#processResponse</a>
+    </li></ul></dd>
     
 
     
@@ -912,6 +1309,275 @@ and stops running when #finish is called or a new page is requested.</p>
 
 
 
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="requested"><span class="type-signature"></span>requested<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>This method is called when this target is requested. The request object can be
+found in the <a href="jrt.Target.html#req"><code>req</code></a> property.</p>
+<p>If this is a view, this method is called before the <a href="jrt.TargetView.html#shown"><code>jrt.TargetView#shown</code></a>
+method. You may cancel the request (thus preventing the view from showing) by calling
+<a href="jrt.App.html#navigateBack"><code>jrt.App#navigateBack</code></a> from this method. If this is a dialog, you can also
+do this by calling <a href="jrt.Dialog.html#close"><code>jrt.Dialog#close</code></a>. The request can also be cancelled in
+this way from <a href="jrt.App.html#pageRequested"><code>jrt.App#pageRequested</code></a> and <a href="jrt.App.html#dialogRequested"><code>jrt.App#dialogRequested</code></a>.</p>
+<p>If this is a page, you can redirect the request by calling <a href="jrt.App.html#navigateTo"><code>jrt.App#navigateTo</code></a>
+from this method (you can also do this from <a href="jrt.App.html#pageRequested"><code>jrt.App#pageRequested</code></a>).</p>
+<p>This base implementation does nothing.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.Target.html#requested">jrt.Target#requested</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sendRequest"><span class="type-signature"></span>sendRequest<span class="signature">(req<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sends an asynchronous AJAX request to the URL specified in <code>req</code>'. The supported
+methods are &quot;GET&quot; (the default), &quot;POST&quot;, &quot;PUT&quot;, &quot;PATCH&quot;, &quot;DELETE&quot; and &quot;HEAD&quot;.
+The response will be passed to <a href="jrt.Ajax.html#processResponse"><code>processResponse</code></a>.
+The expected response type can be specified with the <code>responseType</code>
+property in the specified request (&quot;<b>json</b>&quot; by default).</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.AjaxRequest.html">jrt.AjaxRequest</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.Ajax.html#sendRequest">jrt.Ajax#sendRequest</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If any of the request parameters is invalid.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 
@@ -1014,13 +1680,13 @@ and stops running when #finish is called or a new page is requested.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#jrt">jrt</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="jrt.html">jrt</a></li></ul><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.JrtError.html">JrtError</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Oct 30 2020 09:27:36 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 08:07:48 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

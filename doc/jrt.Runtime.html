@@ -29,17 +29,18 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="global.html#jrt">jrt</a>.</span>Runtime<span class="signature">()</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>Runtime</h2>
         
-            <div class="class-description"><p>App loader and runtime utility class. If Apache Cordova is detected, the app will run
-as an installed Cordova app. Otherwise, it will run as a regular web app.</p>
-<p>This runtime creates the app as an instance of <a href="jrt.App.html">jrt.App</a>. The concrete class that
-implements your app must be specified in the 'class' attribute of the jRT library's
-SCRIPT element (which must appear in the HEAD element before your app's own scripts).
-If no class is specified, a direct instance of <a href="jrt.App.html">jrt.App</a> will be used.</p>
+            <div class="class-description"><p>App loader and runtime utility class. If Apache Cordova is detected, the app will
+run as an installed Cordova app. Otherwise, it will run as a regular web app.</p>
+<p>This runtime creates the app as an instance of <a href="jrt.App.html"><code>jrt.App</code></a>. The concrete class
+that implements your app must be specified in the <code>class</code> attribute of
+the jRT library's <code>SCRIPT</code> element (which must appear in the <code>HEAD</code>
+element before your app's own scripts). If no class is specified, a direct instance
+of <a href="jrt.App.html"><code>jrt.App</code></a> will be used.</p>
 <p>The app's constructor is called when both the DOM and the Cordova APIs (if available)
 are ready. Then the app's start page will be shown and the &quot;ready&quot; token will be
-be added to the HTML element's class attribute.</p></div>
+be added to the <code>HTML</code> element's <code>class</code> attribute.</p></div>
         
     
 </header>
@@ -48,16 +49,6 @@ be added to the HTML element's class attribute.</p></div>
     <div class="container-overview">
     
         
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="Runtime"><span class="type-signature"></span>new Runtime<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
 
 
 
@@ -220,10 +211,10 @@ be added to the HTML element's class attribute.</p></div>
 
 
 <div class="description">
-    <p>The URL form where the app was loaded. The URL parameters are removed from the
-initial URL, but you can access them here, if needed. The initial URL hash is
-also removed and ignored (this framework allows only one start page, which can
-be specified in the jrt.App#constructor).</p>
+    <p>The URL form where the app was loaded. The runtime removes the URL parameters from
+the initial URL, but you can get them from here, if needed. The initial URL hash is
+also removed and ignored, since this framework allows only one start page (which can
+be specified with <a href="jrt.App.html#mainPageId"><code>jrt.App#mainPageId</code></a>).</p>
 </div>
 
 
@@ -284,71 +275,14 @@ be specified in the jrt.App#constructor).</p>
 
         
             
-<h4 class="name" id=".offline"><span class="type-signature">(static) </span>offline<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    <p>Tells if the app is offline. This will be null if it's unknown.</p>
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id=".platform"><span class="type-signature">(static) </span>platform<span class="type-signature"> :string</span></h4>
+<h4 class="name" id=".platform"><span class="type-signature">(static, constant) </span>platform<span class="type-signature"> :string</span></h4>
 
 
 
 
 <div class="description">
     <p>This will be &quot;web&quot; when running in a web browser (without Cordova). When running
-with Cordova, this contains the same as the cordova.platformId property.</p>
+with Cordova, this contains the same as the <code>cordova.platformId property</code>.</p>
 </div>
 
 
@@ -427,7 +361,7 @@ with Cordova, this contains the same as the cordova.platformId property.</p>
 
 
 <div class="description">
-    <p>Exits the app, if running as installed app.</p>
+    <p>Exits the app, if running as installed app. Otherwise, it does nothing.</p>
 </div>
 
 
@@ -502,6 +436,107 @@ with Cordova, this contains the same as the cordova.platformId property.</p>
     
 
     
+    <h4 class="name" id=".isOffline"><span class="type-signature">(static) </span>isOffline<span class="signature">()</span><span class="type-signature"> &rarr; (nullable) {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Tells if the app is offline. This will be null if it's unknown.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id=".reload"><span class="type-signature">(static) </span>reload<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
@@ -510,8 +545,7 @@ with Cordova, this contains the same as the cordova.platformId property.</p>
 
 
 <div class="description">
-    <p>Reloads the app's URL.
-An error is always thrown in order to stop execution of client code.</p>
+    <p>Reloads the app by reloading its URL without parameters.</p>
 </div>
 
 
@@ -577,14 +611,28 @@ An error is always thrown in order to stop execution of client code.</p>
 
         
 
-    <div class="param-desc">
-    
-        
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>An error is always thrown in order to stop execution of client code.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
 <span class="param-type"><a href="jrt.JrtError.html">jrt.JrtError</a></span>
 
 
-    
-    </div>
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
 
 
     
@@ -609,8 +657,7 @@ An error is always thrown in order to stop execution of client code.</p>
 
 
 <div class="description">
-    <p>Restores the initial HTML contents and resarts the app.
-An error is always thrown in order to stop execution of client code.</p>
+    <p>Restores the initial HTML contents and resarts the app.</p>
 </div>
 
 
@@ -676,14 +723,28 @@ An error is always thrown in order to stop execution of client code.</p>
 
         
 
-    <div class="param-desc">
-    
-        
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>An error is always thrown in order to stop execution of client code.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
 <span class="param-type"><a href="jrt.JrtError.html">jrt.JrtError</a></span>
 
 
-    
-    </div>
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
 
 
     
@@ -710,13 +771,13 @@ An error is always thrown in order to stop execution of client code.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#jrt">jrt</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="jrt.html">jrt</a></li></ul><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.JrtError.html">JrtError</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Oct 30 2020 09:27:36 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 08:07:49 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

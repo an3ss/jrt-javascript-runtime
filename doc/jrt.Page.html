@@ -29,17 +29,17 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="global.html#jrt">jrt</a>.</span>Page<span class="signature">()</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>Page<span class="signature">(element<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>This class handles page events for a page element. A page element is a SECTION element
-that is a direct child of the BODY element and has a unique ID. This element will be
-made visible when navigating to the page.</p>
+            <div class="class-description"><p>This class handles page events for a page element. A page element is a <code>SECTION</code>
+element that is a direct child of the <code>BODY</code> element and has a unique ID.
+This element will be made visible when navigating to the page.</p>
 <p>When navigating to a page for the first time, an instance of its class is created.
 Afterwards, all page events for that page are sent to that instance. You must override
 this class in order to handle those events (the base implementations do nothing).</p>
 <p>Note that, if you navigate to a page using a link, the page will always be scrolled to
-the top of its SECTION element's padding box (or to the window top, as long as the page
-has no top margin).</p></div>
+the top of its <code>SECTION</code> element's padding box (or to the window top, as
+long as the page has no top margin).</p></div>
         
     
 </header>
@@ -54,7 +54,7 @@ has no top margin).</p></div>
     
 
     
-    <h4 class="name" id="Page"><span class="type-signature"></span>new Page<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Page"><span class="type-signature"></span>new Page<span class="signature">(element<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -67,6 +67,55 @@ has no top margin).</p></div>
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -138,6 +187,17 @@ has no top margin).</p></div>
     </div>
 
     
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="jrt.View.html">jrt.View</a></li>
+    </ul>
+
+
+    
 
     
 
@@ -154,10 +214,86 @@ has no top margin).</p></div>
 
         
             
+<h4 class="name" id="app"><span class="type-signature">(protected, constant, non-null) </span>app<span class="type-signature"> :<a href="jrt.App.html">jrt.App</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Reference to the app instance, just for convenience.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="jrt.App.html">jrt.App</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#app">jrt.View#app</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
 <h4 class="name" id="caller"><span class="type-signature">(nullable) </span>caller<span class="type-signature"> :<a href="jrt.Target.html">jrt.Target</a></span></h4>
 
 
 
+
+<div class="description">
+    <p>The target that called this target for the last time.</p>
+</div>
 
 
 
@@ -182,7 +318,91 @@ has no top margin).</p></div>
     
 
     
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="jrt.Target.html#caller">jrt.Target#caller</a>
+    </li></ul></dd>
+    
 
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.TargetView.html#caller">jrt.TargetView#caller</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="element"><span class="type-signature">(constant, non-null) </span>element<span class="type-signature"> :HTMLElement</span></h4>
+
+
+
+
+<div class="description">
+    <p>The HTML element represented by this class.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">HTMLElement</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#element">jrt.View#element</a>
+    </li></ul></dd>
     
 
     
@@ -222,6 +442,10 @@ has no top margin).</p></div>
 
 
 
+<div class="description">
+    <p>The view id, which is the same as the element id.</p>
+</div>
+
 
 
     <h5>Type:</h5>
@@ -247,9 +471,21 @@ has no top margin).</p></div>
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#id">jrt.View#id</a>
+    </li></ul></dd>
+    
 
     
 
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.TargetView.html#id">jrt.TargetView#id</a></li>
+        
+    </ul></dd>
     
 
     
@@ -285,6 +521,10 @@ has no top margin).</p></div>
 
 
 
+<div class="description">
+    <p>The request that activated this target.</p>
+</div>
+
 
 
     <h5>Type:</h5>
@@ -308,7 +548,10 @@ has no top margin).</p></div>
     
 
     
-
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="jrt.Target.html#req">jrt.Target#req</a>
+    </li></ul></dd>
     
 
     
@@ -316,56 +559,12 @@ has no top margin).</p></div>
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
         
-            
-<h4 class="name" id="visible"><span class="type-signature"></span>visible<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
+            <li><a href="jrt.TargetView.html#req">jrt.TargetView#req</a></li>
+        
+    </ul></dd>
     
 
     
@@ -406,12 +605,310 @@ has no top margin).</p></div>
     
 
     
-    <h4 class="name" id="actionFinished"><span class="type-signature"></span>actionFinished<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="actionFinished"><span class="type-signature"></span>actionFinished<span class="signature">(action<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h4>
     
 
     
 
 
+
+<div class="description">
+    <p>This method is called when an action that was requested from this target is finished
+explicitly (with the <a href="jrt.Action.html#finish"><code>jrt.Action#finish</code></a> method).</p>
+<p>This base implementation does nothing. Override as needed.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>action</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.Action.html">jrt.Action</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="jrt.Target.html#actionFinished">jrt.Target#actionFinished</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.TargetView.html#actionFinished">jrt.TargetView#actionFinished</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="dialogClosed"><span class="type-signature"></span>dialogClosed<span class="signature">(dialog<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>This method is called when a dialog that was opened from this target is closed.
+A dialog is usually closed by submitting a form with the &quot;dialog&quot; method. It can
+also be closed with <a href="jrt.Modal.html#close"><code>jrt.Modal#close</code></a> or with a <code>#back</code> URL.</p>
+<p>This base implementation does nothing. Override as needed.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dialog</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.Modal.html">jrt.Modal</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="jrt.Target.html#dialogClosed">jrt.Target#dialogClosed</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.TargetView.html#dialogClosed">jrt.TargetView#dialogClosed</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getParentId"><span class="type-signature"></span>getParentId<span class="signature">()</span><span class="type-signature"> &rarr; (nullable) {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Returns the hierarchical parent of this page. This method is used by <a href="jrt.App.html#navigateBack"><code>jrt.App#navigateBack</code></a>
+to determine what page to go back to. This base implementation returns null.</p>
+</div>
 
 
 
@@ -474,6 +971,24 @@ has no top margin).</p></div>
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -485,19 +1000,116 @@ has no top margin).</p></div>
     
 
     
-    <h4 class="name" id="dialogClosed"><span class="type-signature"></span>dialogClosed<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="handleEvent"><span class="type-signature">(protected) </span>handleEvent<span class="signature">(e<span class="signature-attributes">non-null</span>, label<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>This method is called when an event registered with <a href="jrt.Element.html#listenToEvent"><code>listenToEvent</code></a>
+is triggered.</p>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>e</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Event</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The event object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The label specified when registering the event.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -512,6 +1124,11 @@ has no top margin).</p></div>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#handleEvent">jrt.View#handleEvent</a>
+    </li></ul></dd>
     
 
     
@@ -571,6 +1188,11 @@ has no top margin).</p></div>
 
 
 
+<div class="description">
+    <p>This method is called when a view is hidden. If the view being hidden is a page,
+this is called before the <a href="jrt.Page.html#requested"><code>jrt.Page#requested</code></a> method of the page to be shown.</p>
+</div>
+
 
 
 
@@ -591,6 +1213,195 @@ has no top margin).</p></div>
 
     
 
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.TargetView.html#hidden">jrt.TargetView#hidden</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ignoreEvent"><span class="type-signature">(protected) </span>ignoreEvent<span class="signature">(eventType, element<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Stops listenig to the specified event type on the specified element.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The event type to listen to.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The HTML element to stop listening to. Defaults to this element.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#ignoreEvent">jrt.View#ignoreEvent</a>
+    </li></ul></dd>
     
 
     
@@ -643,12 +1454,16 @@ has no top margin).</p></div>
     
 
     
-    <h4 class="name" id="requested"><span class="type-signature"></span>requested<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="isVisible"><span class="type-signature"></span>isVisible<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    <p>Returns whether the view is currently visible.</p>
+</div>
 
 
 
@@ -670,6 +1485,11 @@ has no top margin).</p></div>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#isVisible">jrt.View#isVisible</a>
+    </li></ul></dd>
     
 
     
@@ -709,6 +1529,1131 @@ has no top margin).</p></div>
 
 
 
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="listenToEvent"><span class="type-signature">(protected) </span>listenToEvent<span class="signature">(eventType, element<span class="signature-attributes">opt, nullable</span>, label<span class="signature-attributes">opt, nullable</span>, useCapture<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets this object as the event listener for the specified event type and element.
+The <a href="jrt.Element.html#handleEvent"><code>handleEvent</code></a> method is called when the event occurs.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The event type to listen to.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The HTML element to listen to. Defaults to this element.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional label passed to the event handler.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>useCapture</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#listenToEvent">jrt.View#listenToEvent</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processResponse"><span class="type-signature">(protected) </span>processResponse<span class="signature">(req<span class="signature-attributes">non-null</span>, status, response<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Implement this method to process the response received after a call to <a href="jrt.Ajax.html#sendRequest"><code>sendRequest</code></a>.
+The response data type depends on the <code>responseType</code> property specified in the request.</p>
+<p>The response status can be &quot;<b>success</b>&quot;, &quot;<b>server-error</b>&quot;, &quot;<b>type-error</b>&quot;
+(when the specified response type does not match the received data), &quot;<b>error</b>&quot;
+(if there is a connection error), &quot;<b>timeout</b>&quot; or &quot;<b>offline</b>&quot;. Note that
+the &quot;<b>offline</b>&quot; status is not reliable in all devices, so an &quot;<b>error</b>&quot;
+status may be received when offline.</p>
+<p>The default implementation does nothing.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.AjaxRequest.html">jrt.AjaxRequest</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The request object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The response status (see method description).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.html#.AjaxResponse">jrt.AjaxResponse</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The server response. This will be null on error or timeout.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#processResponse">jrt.View#processResponse</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="query"><span class="type-signature"></span>query<span class="signature">(selector, baseElement)</span><span class="type-signature"> &rarr; (nullable) {HTMLElement}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Returns the first element that matches the specified selector. If no base element
+is specified, this block is used as base element. Returns null if no element is found.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The CSS selector.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>baseElement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+|
+
+<span class="param-type">DocumentFragment</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional base element.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#query">jrt.View#query</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">HTMLElement</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="queryAll"><span class="type-signature"></span>queryAll<span class="signature">(selector, baseElement)</span><span class="type-signature"> &rarr; (non-null) {NodeList.&lt;!HTMLElement>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Returns all elements that match the specified selector. If no base element
+is specified, this element is used.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The CSS selector.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>baseElement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+|
+
+<span class="param-type">DocumentFragment</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional base element.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#queryAll">jrt.View#queryAll</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">NodeList.&lt;!HTMLElement></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="requested"><span class="type-signature"></span>requested<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>This method is called when this target is requested. The request object can be
+found in the <a href="jrt.Target.html#req"><code>req</code></a> property.</p>
+<p>If this is a view, this method is called before the <a href="jrt.TargetView.html#shown"><code>jrt.TargetView#shown</code></a>
+method. You may cancel the request (thus preventing the view from showing) by calling
+<a href="jrt.App.html#navigateBack"><code>jrt.App#navigateBack</code></a> from this method. If this is a dialog, you can also
+do this by calling <a href="jrt.Dialog.html#close"><code>jrt.Dialog#close</code></a>. The request can also be cancelled in
+this way from <a href="jrt.App.html#pageRequested"><code>jrt.App#pageRequested</code></a> and <a href="jrt.App.html#dialogRequested"><code>jrt.App#dialogRequested</code></a>.</p>
+<p>If this is a page, you can redirect the request by calling <a href="jrt.App.html#navigateTo"><code>jrt.App#navigateTo</code></a>
+from this method (you can also do this from <a href="jrt.App.html#pageRequested"><code>jrt.App#pageRequested</code></a>).</p>
+<p>This base implementation does nothing.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="jrt.Target.html#requested">jrt.Target#requested</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.TargetView.html#requested">jrt.TargetView#requested</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sendRequest"><span class="type-signature"></span>sendRequest<span class="signature">(req<span class="signature-attributes">non-null</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sends an asynchronous AJAX request to the URL specified in <code>req</code>'. The supported
+methods are &quot;GET&quot; (the default), &quot;POST&quot;, &quot;PUT&quot;, &quot;PATCH&quot;, &quot;DELETE&quot; and &quot;HEAD&quot;.
+The response will be passed to <a href="jrt.Ajax.html#processResponse"><code>processResponse</code></a>.
+The expected response type can be specified with the <code>responseType</code>
+property in the specified request (&quot;<b>json</b>&quot; by default).</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="jrt.AjaxRequest.html">jrt.AjaxRequest</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#sendRequest">jrt.View#sendRequest</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If any of the request parameters is invalid.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 
@@ -729,6 +2674,12 @@ has no top margin).</p></div>
 
 
 
+<div class="description">
+    <p>This method is called when a view has just been made visible, after a request to this
+target. The request object can be found in the <a href="jrt.TargetView.html#req"><code>req</code></a> property.
+Note that this method will not be called when a view is reloaded.</p>
+</div>
+
 
 
 
@@ -747,6 +2698,97 @@ has no top margin).</p></div>
 
     
 
+    
+
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="jrt.TargetView.html#shown">jrt.TargetView#shown</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toString"><span class="type-signature"></span>toString<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="jrt.View.html#toString">jrt.View#toString</a>
+    </li></ul></dd>
     
 
     
@@ -811,13 +2853,13 @@ has no top margin).</p></div>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#jrt">jrt</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="jrt.html">jrt</a></li></ul><h3>Classes</h3><ul><li><a href="jrt.Action.html">Action</a></li><li><a href="jrt.Ajax.html">Ajax</a></li><li><a href="jrt.AlertBox.html">AlertBox</a></li><li><a href="jrt.App.html">App</a></li><li><a href="jrt.AppRequest.html">AppRequest</a></li><li><a href="jrt.Block.html">Block</a></li><li><a href="jrt.ConfirmBox.html">ConfirmBox</a></li><li><a href="jrt.Dialog.html">Dialog</a></li><li><a href="jrt.DialogBox.html">DialogBox</a></li><li><a href="jrt.Element.html">Element</a></li><li><a href="jrt.Form.html">Form</a></li><li><a href="jrt.HashUrl.html">HashUrl</a></li><li><a href="jrt.ImageBox.html">ImageBox</a></li><li><a href="jrt.JrtError.html">JrtError</a></li><li><a href="jrt.LocaleBundle.html">LocaleBundle</a></li><li><a href="jrt.LocalStorage.html">LocalStorage</a></li><li><a href="jrt.LZW.html">LZW</a></li><li><a href="jrt.Modal.html">Modal</a></li><li><a href="jrt.Page.html">Page</a></li><li><a href="jrt.PromptBox.html">PromptBox</a></li><li><a href="jrt.Runtime.html">Runtime</a></li><li><a href="jrt.Serializable.html">Serializable</a></li><li><a href="jrt.SystemDialogBox.html">SystemDialogBox</a></li><li><a href="jrt.Template.html">Template</a></li><li><a href="jrt.View.html">View</a></li></ul><h3>Interfaces</h3><ul><li><a href="jrt.AjaxRequest.html">AjaxRequest</a></li><li><a href="jrt.Target.html">Target</a></li><li><a href="jrt.TargetView.html">TargetView</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Oct 30 2020 09:27:36 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 08:07:49 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
