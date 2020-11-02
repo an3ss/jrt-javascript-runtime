@@ -897,14 +897,14 @@ jrt.Serializable = class {
    /**
     * @param {string|!Array<string>} message
     * @param {?jrt.SystemDialogBox.Options=} options
-    * @return {!jrt.SystemDialogBox}
+    * @return {!jrt.AlertBox}
     */
    static alert(message, options) {}
 
    /**
     * @param {string|!Array<string>} message
     * @param {?jrt.SystemDialogBox.Options=} options
-    * @return {!jrt.SystemDialogBox}
+    * @return {!jrt.ConfirmBox}
     */
    static confirm(message, options) {}
 

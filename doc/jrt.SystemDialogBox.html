@@ -31,11 +31,12 @@
         <h2><span class="attribs"><span class="type-signature">(abstract, protected) </span></span>
             <span class="ancestors"><a href="jrt.html">jrt</a>.</span>SystemDialogBox<span class="signature">(type, options<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>Static methods that replace the native alert/confirm/prompt functions with modal dialogs.
-It also implements an image dialog box with the <a href="jrt.SystemDialogBox.html#.image"><code>image</code></a> method.</p>
+            <div class="class-description"><p>Static methods that replace the native <code>alert</code>, <code>confirm</code> and
+<code>prompt</code> functions with modal dialogs. It also implements an image dialog
+box with the <a href="jrt.SystemDialogBox.html#.image"><code>image</code></a> method.</p>
 <p>The user response is set in the <a href="jrt.SystemDialogBox.html#returnValue"><code>returnValue</code></a>
 property, and passed to the <a href="jrt.Target.html#dialogClosed"><code>jrt.Target#dialogClosed</code></a> method of the target view
-or action that opened it (like with any other dialog). See the methods' descriptions
+or action that opened it (like with any other dialog). See the method descriptions
 for details.</p></div>
         
     
@@ -255,7 +256,7 @@ for details.</p></div>
 
 
 <div class="description">
-    <p>Default dialog box options. They can be overridden with <code>setDefaultOptions</code>
+    <p>Default dialog box options. They can be overridden with <a href="jrt.SystemDialogBox.html#.setDefaultOptions"><code>setDefaultOptions</code></a>
 or with the <code>options</code> parameter in the <code>alert</code>, <code>confirm</code>
 and <code>prompt</code> methods.</p>
 </div>
@@ -965,8 +966,6 @@ If not set, it will be null.</p>
 <div class="description">
     <p>Opens an alert dialog box with a message, an optional title and an [Ok] button.
 The dialogs's return value is always null.</p>
-<p>The supported options are 'title', 'class', 'showCloseButton', 'translateButtons'
-and 'buttonTextOk'.</p>
 <p>If the message is a string, the '\n' character creates a new paragraph. In this case,
 HTML tags found in the message are not interpreted (they are considered just text).</p>
 <p>If the message is a string array, each string in the array is put in a paragraph and
@@ -1173,15 +1172,14 @@ as HTML.</p>
 
 
 <div class="description">
-    <p>Opens a confirmation dialog box with a message, and optional title, an [OK] button
-and a [Cancel] button. The return value is true if the user accepts and false if
-the user cancels, unless the 'buttonTextAlt' option is specified (see below).</p>
-<p>The supported options are 'title', 'class', 'showCloseButton', 'translateButtons',
-'buttonTextOk', 'buttonTextCancel' and 'buttonTextAlt'.</p>
-<p>If the 'buttonTextAlt' option is specified, a third alternate button will be shown
-with the specified text, between &quot;Ok&quot; and &quot;Cancel&quot;. In this case, the returned value
-will be true if the accept button is pressed, false if the alternate button is pressed,
-and null if the dialog is canceled.</p>
+    <p>Opens a confirmation dialog box with a message, and optional title, an <code>[OK]</code>
+button and a <code>[Cancel]</code> button.</p>
+<p>If the <code>buttonTextAlt</code> option is not specified, the return value is true
+if the user accepts and false if the user cancels.</p>
+<p>If the <code>buttonTextAlt</code> option is specified, a third alternative button will
+be shown with the specified text, between the <code>[Ok]</code> and <code>[Cancel]</code>
+buttons. In this case, the returned value will be true if the accept button is pressed,
+false if the alternative button is pressed, and null if the dialog is canceled.</p>
 </div>
 
 
@@ -1388,12 +1386,12 @@ includes a close button. The dialog will only open if the image is successfully 
 <p>This type of dialog box is opened automatically when an internal image link is
 followed. Such a link is defined by:</p>
 <ul>
-<li>It has the 'type' attribute set to an image type.</li>
-<li>If contains an IMAGE element.</li>
-<li>It does not include the attribute rel=&quot;external&quot;.</li>
+<li>It has the <code>type</code> attribute set to an image type.</li>
+<li>If contains an <code>IMG</code> element.</li>
+<li>It does not include the attribute <code>rel=&quot;external&quot;</code>.</li>
 </ul>
-<p>The opened image URL will be the one linked by the image link or, if the 'href'
-attribute is empty, the value of the contained image's 'src' attribute.</p>
+<p>The opened image URL will be the one linked by the image link or, if the <code>href</code>
+attribute is empty, the value of the contained image's <code>src</code> attribute.</p>
 </div>
 
 
@@ -1627,20 +1625,19 @@ attribute is empty, the value of the contained image's 'src' attribute.</p>
 
 
 <div class="description">
-    <p>Opens a prompt dialog box with a message, an optional title, an input field, an [Ok]
-button and a [Cancel] button. The return value is the input element's value (possibly
-an empty string) if the user accepts, and null if the user cancels.</p>
-<p>The supported options are 'title', 'class', 'showCloseButton' 'translateButtons',
-'buttonTextOk', 'buttonTextCancel' and 'autofocus'.</p>
-<p>The 'autofocus' option can be:</p>
+    <p>Opens a prompt dialog box with a message, an optional title, an input field, an
+<code>[Ok]</code> button and a <code>[Cancel]</code> button. The return value is
+the input element's value (possibly an empty string) if the user accepts, and null
+if the user cancels.</p>
+<p>The <code>autofocus</code> option can be:</p>
 <ul>
-<li>&quot;none&quot;: The input element does not receive the focus.</li>
-<li>&quot;focus&quot;: The input element receives the focus (this is the default).</li>
-<li>&quot;select&quot;: The input element receives the focus and the initial value is selected.</li>
+<li>&quot;<b>none</b>&quot;: The input element does not receive the focus.</li>
+<li>&quot;<b>focus</b>&quot;: The input element receives the focus (this is the default).</li>
+<li>&quot;<b>select</b>&quot;: The input element receives the focus and the initial value is selected.</li>
 </ul>
-<p>If the 'rows' option is specified and it is bigger that 1, then the prompt box will
-include a TEXTAREA element (instead of an INPUT element) with its 'rows' attribute
-set to the specified value.</p>
+<p>If the <code>rows</code> option is specified and it is bigger that 1, then the
+prompt box will use a <code>TEXTAREA</code> element (instead of an <code>INPUT</code>
+element) with its <code>rows</code> attribute set to the specified value.</p>
 </div>
 
 
@@ -2009,7 +2006,7 @@ set to the specified value.</p>
 
 
 <div class="description">
-    <p>Creates the dialog form and its common elements.</p>
+    <p>Creates the dialog's form and its common elements.</p>
 </div>
 
 
@@ -3702,6 +3699,242 @@ property in the specified request (&quot;<b>json</b>&quot; by default).</p>
 
 
 
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The dialog box title (none by default).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>class</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>CSS classes to add to the dialog, sparated by spaces (optional).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showCloseButton</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether to show a close button or not (false by default). The close button has no text.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>translateButtons</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether to translate text in buttons or not (false by default).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>buttonTextOk</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Ok button text (defaults to &quot;<b>OK</b>&quot;).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>buttonTextCancel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Cancel button text (defaults to &quot;<b>Cancel</b>&quot;).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>buttonTextAlt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Alternate button text for a confirm box (see <a href="jrt.SystemDialogBox.html#.confirm"><code>confirm</code></a>).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autofocus</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The autofocus mode for a prompt box (see <a href="jrt.SystemDialogBox.html#.prompt"><code>prompt</code></a>).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rows</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Number of rows for a prompt box (see <a href="jrt.SystemDialogBox.html#.prompt"><code>prompt</code></a>).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
 <dl class="details">
 
     
@@ -3762,7 +3995,7 @@ property in the specified request (&quot;<b>json</b>&quot; by default).</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 08:07:49 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 17:49:16 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
