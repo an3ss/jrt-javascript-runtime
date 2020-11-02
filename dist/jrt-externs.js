@@ -1020,7 +1020,6 @@ jrt.View = class extends jrt.Block {
    }
 
    /**
-    * @abstract
     * @return {boolean}
     */
    isVisible() {}
