@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: PromptBox</title>
+    <title>JSDoc: Class: Modal</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: PromptBox</h1>
+    <h1 class="page-title">Class: Modal</h1>
 
     
 
@@ -28,13 +28,18 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>PromptBox</h2>
+        <h2><span class="attribs"><span class="type-signature">(protected) </span></span>
+            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>Modal<span class="signature">(element<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>Implements a prompt dialog box with a message, an optional title, an input field, and
-two buttons labelled &quot;Ok&quot; and &quot;Cancel&quot;. If the user accepts, the return value is the
-input element's value. Otherwise it's null.</p>
-<p>This class must be instanced with the <a href="jrt.SystemDialogBox.html#.prompt"><code>jrt.SystemDialogBox.prompt</code></a> method.</p></div>
+            <div class="class-description"><p>Base class for modal dialogs (or simply &quot;dialogs&quot;), backed by a <code>DIALOG</code>
+element. A dialog can be opened by following a hash URL, but it does not participate
+in URL navigation (it's not saved the browser's history).</p>
+<p>A dialog is normally closed by submitting a form with the &quot;dialog&quot; method. In this base
+implementation, the <code>returnValue</code> property receives
+the value of the submit buttonthat was activated. Subclasses can change this by
+implementing <code>setReturnValue</code>.</p>
+<p>A dialog can also be closed with the <code>#back</code> URL, with the <a href="jrt.Modal.html#close"><code>close</code></a>
+method and with the <a href="jrt.App.html#navigateBack"><code>jrt.App#navigateBack</code></a> method.</p></div>
         
     
 </header>
@@ -44,6 +49,23 @@ input element's value. Otherwise it's null.</p>
     
         
 
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="Modal"><span class="type-signature">(protected) </span>new Modal<span class="signature">(element<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Creates a dialog object for the specifed <code>DIALOG</code> element. If no element
+is specified, one is created and added to the <code>BODY</code> element (and removed
+when the dialog is closed).</p>
+</div>
 
 
 
@@ -52,6 +74,68 @@ input element's value. Otherwise it's null.</p>
 
 
 
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLDialogElement</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -122,7 +206,7 @@ input element's value. Otherwise it's null.</p>
 
 
     <ul>
-        <li><a href="jrt.SystemDialogBox.html">jrt.SystemDialogBox</a></li>
+        <li><a href="jrt.View.html">jrt.View</a></li>
     </ul>
 
 
@@ -179,79 +263,7 @@ input element's value. Otherwise it's null.</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#app">jrt.SystemDialogBox#app</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="buttons"><span class="type-signature">(protected, non-null) </span>buttons<span class="type-signature"> :HTMLElement</span></h4>
-
-
-
-
-<div class="description">
-    <p>The paragraph that contains the dialog's buttons.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">HTMLElement</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#buttons">jrt.SystemDialogBox#buttons</a>
+        <a href="jrt.View.html#app">jrt.View#app</a>
     </li></ul></dd>
     
 
@@ -317,9 +329,76 @@ input element's value. Otherwise it's null.</p>
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="element"><span class="type-signature">(constant, non-null) </span>element<span class="type-signature"> :HTMLDialogElement</span></h4>
+
+
+
+
+<div class="description">
+    <p>The HTML element represented by this instance.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">HTMLDialogElement</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#dynamic">jrt.SystemDialogBox#dynamic</a>
+        <a href="jrt.View.html#element">jrt.View#element</a>
     </li></ul></dd>
     
 
@@ -355,13 +434,13 @@ input element's value. Otherwise it's null.</p>
 
         
             
-<h4 class="name" id="form"><span class="type-signature">(non-null) </span>form<span class="type-signature"> :<a href="jrt.Form.html">jrt.Form</a></span></h4>
+<h4 class="name" id="form"><span class="type-signature">(nullable) </span>form<span class="type-signature"> :<a href="jrt.Form.html">jrt.Form</a></span></h4>
 
 
 
 
 <div class="description">
-    <p>The first <code>FORM</code> element present in the dialog.</p>
+    <p>The first <code>FORM</code> element present in this view.</p>
 </div>
 
 
@@ -391,7 +470,7 @@ input element's value. Otherwise it's null.</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#form">jrt.SystemDialogBox#form</a>
+        <a href="jrt.View.html#form">jrt.View#form</a>
     </li></ul></dd>
     
 
@@ -463,217 +542,7 @@ input element's value. Otherwise it's null.</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#id">jrt.SystemDialogBox#id</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="input"><span class="type-signature"></span>input<span class="type-signature"> :HTMLInputElement|HTMLTextAreaElement</span></h4>
-
-
-
-
-<div class="description">
-    <p>The dialog's input element.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">HTMLInputElement</span>
-|
-
-<span class="param-type">HTMLTextAreaElement</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="options"><span class="type-signature">(protected, non-null) </span>options<span class="type-signature"> :<a href="jrt.SystemDialogBox.html#.Options">jrt.SystemDialogBox.Options</a></span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="jrt.SystemDialogBox.html#.Options">jrt.SystemDialogBox.Options</a></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#options">jrt.SystemDialogBox#options</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="para"><span class="type-signature">(protected, non-null) </span>para<span class="type-signature"> :HTMLElement</span></h4>
-
-
-
-
-<div class="description">
-    <p>The last text paragraph in the dialog box.</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">HTMLElement</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#para">jrt.SystemDialogBox#para</a>
+        <a href="jrt.View.html#id">jrt.View#id</a>
     </li></ul></dd>
     
 
@@ -742,11 +611,6 @@ input element's value. Otherwise it's null.</p>
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#parent">jrt.SystemDialogBox#parent</a>
-    </li></ul></dd>
     
 
     
@@ -817,11 +681,6 @@ If not set, it will be null.</p>
     
 
     
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#returnValue">jrt.SystemDialogBox#returnValue</a>
-    </li></ul></dd>
-    
 
     
 
@@ -865,7 +724,7 @@ If not set, it will be null.</p>
     
 
     
-    <h4 class="name" id="appendForm"><span class="type-signature">(protected) </span>appendForm<span class="signature">(message)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".close"><span class="type-signature">(static) </span>close<span class="signature">(returnValue<span class="signature-attributes">opt, nullable</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -873,7 +732,8 @@ If not set, it will be null.</p>
 
 
 <div class="description">
-    <p>Creates the dialog's form and its common elements.</p>
+    <p>Closes the topmost open modal dialog, if there is one. If no return value is specified,
+the closed dialog's current return value remains.</p>
 </div>
 
 
@@ -897,6 +757,8 @@ If not set, it will be null.</p>
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -909,26 +771,35 @@ If not set, it will be null.</p>
 
         <tr>
             
-                <td class="name"><code>message</code></td>
+                <td class="name"><code>returnValue</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
-|
-
-<span class="param-type">!Array.&lt;string></span>
+<span class="param-type"><a href="jrt.html#.DialogReturnValue">jrt.DialogReturnValue</a></span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>The return value for the dialog.</p></td>
         </tr>
 
     
@@ -948,11 +819,6 @@ If not set, it will be null.</p>
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#appendForm">jrt.SystemDialogBox#appendForm</a>
-    </li></ul></dd>
     
 
     
@@ -994,6 +860,28 @@ If not set, it will be null.</p>
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True if a dialog has been actually closed, false if no dialog was open.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1099,11 +987,6 @@ If not set, it will be null.</p>
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#close">jrt.SystemDialogBox#close</a>
-    </li></ul></dd>
     
 
     
@@ -1305,7 +1188,7 @@ is triggered.</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#handleEvent">jrt.SystemDialogBox#handleEvent</a>
+        <a href="jrt.View.html#handleEvent">jrt.View#handleEvent</a>
     </li></ul></dd>
     
 
@@ -1487,7 +1370,7 @@ is triggered.</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#ignoreEvent">jrt.SystemDialogBox#ignoreEvent</a>
+        <a href="jrt.View.html#ignoreEvent">jrt.View#ignoreEvent</a>
     </li></ul></dd>
     
 
@@ -1530,6 +1413,112 @@ is triggered.</p>
 
 
 
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="isVisible"><span class="type-signature"></span>isVisible<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Returns whether the view is currently visible.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.View.html#isVisible">jrt.View#isVisible</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1738,7 +1727,7 @@ The <a href="jrt.Element.html#handleEvent"><code>handleEvent</code></a> method i
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#listenToEvent">jrt.SystemDialogBox#listenToEvent</a>
+        <a href="jrt.View.html#listenToEvent">jrt.View#listenToEvent</a>
     </li></ul></dd>
     
 
@@ -1956,7 +1945,7 @@ status may be received when offline.</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#processResponse">jrt.SystemDialogBox#processResponse</a>
+        <a href="jrt.View.html#processResponse">jrt.View#processResponse</a>
     </li></ul></dd>
     
 
@@ -2120,7 +2109,7 @@ is specified, this block is used as base element. Returns null if no element is 
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#query">jrt.SystemDialogBox#query</a>
+        <a href="jrt.View.html#query">jrt.View#query</a>
     </li></ul></dd>
     
 
@@ -2302,7 +2291,7 @@ is specified, this element is used.</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#queryAll">jrt.SystemDialogBox#queryAll</a>
+        <a href="jrt.View.html#queryAll">jrt.View#queryAll</a>
     </li></ul></dd>
     
 
@@ -2461,7 +2450,7 @@ property in the specified request (&quot;<b>json</b>&quot; by default).</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.SystemDialogBox.html#sendRequest">jrt.SystemDialogBox#sendRequest</a>
+        <a href="jrt.View.html#sendRequest">jrt.View#sendRequest</a>
     </li></ul></dd>
     
 
@@ -2539,6 +2528,175 @@ property in the specified request (&quot;<b>json</b>&quot; by default).</p>
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="show"><span class="type-signature"></span>show<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Shows the modal dialog. If a dialog box is already open, it is closed first.</p>
+<p>This method adds the &quot;modal&quot; token to the <code>BODY</code> element's class.
+Also, if the body has scroll, it also adds the &quot;scroll&quot; token.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toString"><span class="type-signature"></span>toString<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="jrt.View.html#toString">jrt.View#toString</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -2560,7 +2718,7 @@ property in the specified request (&quot;<b>json</b>&quot; by default).</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Nov 20 2020 16:18:35 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Thu Dec 10 2020 13:20:21 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

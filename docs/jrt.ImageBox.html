@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: DialogBox</title>
+    <title>JSDoc: Class: ImageBox</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: DialogBox</h1>
+    <h1 class="page-title">Class: ImageBox</h1>
 
     
 
@@ -29,10 +29,12 @@
 <header>
     
         <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>DialogBox<span class="signature">()</span><span class="type-signature"></span></h2>
+            <span class="ancestors"><a href="jrt.html">jrt</a>.</span>ImageBox</h2>
         
-            <div class="class-description"><p>Generic dialog box class. The dialog can be backed by an existing element or the dialog
-can be created and destroyed dynamically. Only one dialog box can be open at a time.</p></div>
+            <div class="class-description"><p>Implements an image dialog box with the specified image and an optional title.
+The dialog also includes a close button. Note that the dialog will only open if the
+image is successfully loaded.</p>
+<p>This class must be instanced with the <a href="jrt.SystemDialogBox.html#.image"><code>jrt.SystemDialogBox.image</code></a> method.</p></div>
         
     
 </header>
@@ -41,16 +43,6 @@ can be created and destroyed dynamically. Only one dialog box can be open at a t
     <div class="container-overview">
     
         
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="DialogBox"><span class="type-signature"></span>new DialogBox<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
 
 
 
@@ -130,7 +122,7 @@ can be created and destroyed dynamically. Only one dialog box can be open at a t
 
 
     <ul>
-        <li><a href="jrt.Modal.html">jrt.Modal</a></li>
+        <li><a href="jrt.SystemDialogBox.html">jrt.SystemDialogBox</a></li>
     </ul>
 
 
@@ -183,12 +175,84 @@ can be created and destroyed dynamically. Only one dialog box can be open at a t
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Ajax.html#app">jrt.Ajax#app</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#app">jrt.SystemDialogBox#app</a>
     </li></ul></dd>
     
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="buttons"><span class="type-signature">(protected, non-null) </span>buttons<span class="type-signature"> :HTMLElement</span></h4>
+
+
+
+
+<div class="description">
+    <p>The paragraph that contains the dialog's buttons.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">HTMLElement</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#buttons">jrt.SystemDialogBox#buttons</a>
+    </li></ul></dd>
     
 
     
@@ -251,12 +315,12 @@ can be created and destroyed dynamically. Only one dialog box can be open at a t
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Modal.html#dynamic">jrt.Modal#dynamic</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#dynamic">jrt.SystemDialogBox#dynamic</a>
+    </li></ul></dd>
     
 
     
@@ -297,7 +361,7 @@ can be created and destroyed dynamically. Only one dialog box can be open at a t
 
 
 <div class="description">
-    <p>The first <code>FORM</code> element present in the dialog.</p>
+    <p>The first <code>FORM</code> element present in this view.</p>
 </div>
 
 
@@ -323,12 +387,12 @@ can be created and destroyed dynamically. Only one dialog box can be open at a t
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Modal.html#form">jrt.Modal#form</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#form">jrt.SystemDialogBox#form</a>
+    </li></ul></dd>
     
 
     
@@ -395,12 +459,152 @@ can be created and destroyed dynamically. Only one dialog box can be open at a t
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.View.html#id">jrt.View#id</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#id">jrt.SystemDialogBox#id</a>
     </li></ul></dd>
     
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="options"><span class="type-signature">(protected, non-null) </span>options<span class="type-signature"> :<a href="jrt.SystemDialogBox.html#.Options">jrt.SystemDialogBox.Options</a></span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="jrt.SystemDialogBox.html#.Options">jrt.SystemDialogBox.Options</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#options">jrt.SystemDialogBox#options</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="para"><span class="type-signature">(protected, non-null) </span>para<span class="type-signature"> :HTMLElement</span></h4>
+
+
+
+
+<div class="description">
+    <p>The last text paragraph in the dialog box.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">HTMLElement</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#para">jrt.SystemDialogBox#para</a>
+    </li></ul></dd>
     
 
     
@@ -471,7 +675,7 @@ can be created and destroyed dynamically. Only one dialog box can be open at a t
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.Modal.html#parent">jrt.Modal#parent</a>
+        <a href="jrt.SystemDialogBox.html#parent">jrt.SystemDialogBox#parent</a>
     </li></ul></dd>
     
 
@@ -541,12 +745,12 @@ If not set, it will be null.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Modal.html#returnValue">jrt.Modal#returnValue</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#returnValue">jrt.SystemDialogBox#returnValue</a>
+    </li></ul></dd>
     
 
     
@@ -584,6 +788,146 @@ If not set, it will be null.</p>
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="appendForm"><span class="type-signature">(protected) </span>appendForm<span class="signature">(message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Creates the dialog's form and its common elements.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">!Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#appendForm">jrt.SystemDialogBox#appendForm</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
             
@@ -684,12 +1028,12 @@ If not set, it will be null.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Modal.html#close">jrt.Modal#close</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#close">jrt.SystemDialogBox#close</a>
+    </li></ul></dd>
     
 
     
@@ -887,12 +1231,12 @@ is triggered.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Element.html#handleEvent">jrt.Element#handleEvent</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#handleEvent">jrt.SystemDialogBox#handleEvent</a>
+    </li></ul></dd>
     
 
     
@@ -1069,12 +1413,12 @@ is triggered.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Element.html#ignoreEvent">jrt.Element#ignoreEvent</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#ignoreEvent">jrt.SystemDialogBox#ignoreEvent</a>
+    </li></ul></dd>
     
 
     
@@ -1320,12 +1664,12 @@ The <a href="jrt.Element.html#handleEvent"><code>handleEvent</code></a> method i
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Element.html#listenToEvent">jrt.Element#listenToEvent</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#listenToEvent">jrt.SystemDialogBox#listenToEvent</a>
+    </li></ul></dd>
     
 
     
@@ -1538,12 +1882,12 @@ status may be received when offline.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Ajax.html#processResponse">jrt.Ajax#processResponse</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#processResponse">jrt.SystemDialogBox#processResponse</a>
+    </li></ul></dd>
     
 
     
@@ -1702,12 +2046,12 @@ is specified, this block is used as base element. Returns null if no element is 
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Block.html#query">jrt.Block#query</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#query">jrt.SystemDialogBox#query</a>
+    </li></ul></dd>
     
 
     
@@ -1884,12 +2228,12 @@ is specified, this element is used.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Block.html#queryAll">jrt.Block#queryAll</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#queryAll">jrt.SystemDialogBox#queryAll</a>
+    </li></ul></dd>
     
 
     
@@ -2043,12 +2387,12 @@ property in the specified request (&quot;<b>json</b>&quot; by default).</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="jrt.Ajax.html#sendRequest">jrt.Ajax#sendRequest</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="jrt.SystemDialogBox.html#sendRequest">jrt.SystemDialogBox#sendRequest</a>
+    </li></ul></dd>
     
 
     
@@ -2125,96 +2469,6 @@ property in the specified request (&quot;<b>json</b>&quot; by default).</p>
 
 
         
-            
-
-    
-
-    
-    <h4 class="name" id="show"><span class="type-signature"></span>show<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Shows the modal dialog. If a dialog box is already open, it is closed first.</p>
-<p>This method adds the &quot;modal&quot; token to the <code>BODY</code> element's class.
-Also, if the body has scroll, it also adds the &quot;scroll&quot; token.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="jrt.Modal.html#show">jrt.Modal#show</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
     
 
     
@@ -2236,7 +2490,7 @@ Also, if the body has scroll, it also adds the &quot;scroll&quot; token.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Nov 20 2020 16:18:35 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Thu Dec 10 2020 13:20:21 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
