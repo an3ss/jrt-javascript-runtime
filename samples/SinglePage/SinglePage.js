@@ -6,7 +6,7 @@ class SinglePage extends jrt.Page {
    /**
     * @override
     */
-   targetRequested(req) {
-      jrt.DialogBox.alert("Hello, world!");
+   requested(req) {
+      jrt.SystemDialogBox.alert("This is a single-page application.");
    }
 }

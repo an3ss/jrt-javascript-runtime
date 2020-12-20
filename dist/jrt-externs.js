@@ -6,11 +6,11 @@ jrt.Action = class extends jrt.Ajax {
     * @param {string} id
     */
    constructor(id) {
-      /** @type {*} */
-      this.result;
-      
       /** @type {boolean} */
       this.running;
+
+      /** @type {*} */
+      this.result;
    }
 
    /**
@@ -58,7 +58,7 @@ jrt.Ajax = class {
 };
 /** @record */
 jrt.AjaxRequest = class {
-   
+
    constructor() {
       /** @type {string} */
       this.baseUrl;
@@ -114,7 +114,7 @@ jrt.App = class extends jrt.Block {
 
       /** @type {string} */
       this.mainPageId;
-      
+
       /** @type {!jrt.Page} */
       this.currentPage;
 
@@ -247,23 +247,23 @@ jrt.App = class extends jrt.Block {
 };
 /** @record */
 jrt.AppRequest = class {
-   
+
    constructor() {
       /** @type {string} */
       this.type;
-      
+
       /** @type {?HTMLElement} */
       this.sourceElement;
-      
+
       /** @type {?jrt.TargetView} */
       this.sourceView;
-      
+
       /** @type {?jrt.Target} */
       this.source;
-      
+
       /** @type {!jrt.Target} */
       this.target;
-      
+
       /** @type {!Object<!jrt.FormValue>} */
       this.params;
    }
@@ -456,7 +456,7 @@ jrt.Element = class extends jrt.Ajax {
     * @return {?jrt.FormValue}
     */
    static getSubmitValue(elem) {}
-   
+
    /**
     * @param {?HTMLFormElement} element
     */
@@ -474,13 +474,13 @@ jrt.Element = class extends jrt.Ajax {
     * @param {!Object<!jrt.FormValue>} values
     */
    setValues(values) {}
-   
+
    /**
     * @param {string} name
     * @return {?jrt.HTMLFormControlElement|?RadioNodeList}
     */
    getControl(name) {}
-   
+
    /**
     * @param {string} name
     * @return {?HTMLInputElement}
@@ -520,13 +520,13 @@ jrt.Element = class extends jrt.Ajax {
 }).initializer();
 
 jrt.HashUrl = class {
-   
+
    /**
     * @param {string} hash
     * @return {?jrt.HashUrl}
     */
    static parse(hash) {}
-   
+
    /**
     * @param {string} id
     * @param {?Object<!jrt.FormValue>=} params
@@ -538,7 +538,7 @@ jrt.HashUrl = class {
       /** @type {!Object<!jrt.FormValue>} */
       this.params;
    }
-   
+
    /**
     * @return {string}
     */
@@ -752,9 +752,6 @@ jrt.Modal = class extends jrt.View {
 
       /** @type {?jrt.DialogReturnValue} */
       this.returnValue;
-
-      /** @type {?jrt.Form} */
-      this.form;
    }
 
    show() {}
@@ -1017,6 +1014,9 @@ jrt.View = class extends jrt.Block {
    constructor(element) {
       /** @const {string} */
       this.id;
+
+      /** @type {?jrt.Form} */
+      this.form;
    }
 
    /**
