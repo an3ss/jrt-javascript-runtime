@@ -15,6 +15,7 @@ jrt.Action = class extends jrt.Ajax {
 
    /**
     * @final
+    * @protected
     * @param {*=} result
     * @return {boolean}
     */
@@ -44,6 +45,7 @@ jrt.Ajax = class {
 
    /**
     * @final
+    * @protected
     * @param {!jrt.AjaxRequest} req
     */
    sendRequest(req) {}
