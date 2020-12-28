@@ -440,21 +440,18 @@ jrt.Element = class extends jrt.Ajax {
 (jrt.Form = class extends jrt.Block {
 
    static initializer() {
-      /** @typedef {!HTMLSelectElement|!HTMLInputElement|!HTMLTextAreaElement|!HTMLOutputElement|!HTMLButtonElement} */
-      jrt.HTMLFormControlElement;
-
       /** @type {boolean} */
       this.trimValues;
    }
 
    /**
-    * @param {!jrt.HTMLFormControlElement|!HTMLOptionElement} elem
+    * @param {!jrt.FormControl|!HTMLOptionElement} elem
     * @return {string|number}
     */
    static getValue(elem) {}
 
    /**
-    * @param {!jrt.HTMLFormControlElement|!RadioNodeList} elem
+    * @param {!jrt.FormControl|!RadioNodeList} elem
     * @return {?jrt.FormValue}
     */
    static getSubmitValue(elem) {}
@@ -479,7 +476,7 @@ jrt.Element = class extends jrt.Ajax {
 
    /**
     * @param {string} name
-    * @return {?jrt.HTMLFormControlElement|?RadioNodeList}
+    * @return {?jrt.FormControl|?RadioNodeList}
     */
    getControl(name) {}
 
@@ -766,6 +763,11 @@ jrt.Modal = class extends jrt.View {
 };
 
 const jrt = {};
+
+/**
+ * @typedef {!HTMLSelectElement|!HTMLInputElement|!HTMLTextAreaElement|!HTMLOutputElement|!HTMLButtonElement}
+ */
+jrt.FormControl;
 
 /**
  * @typedef {string|number|boolean}
