@@ -3322,11 +3322,13 @@ The <a href="jrt.Element.html#handleEvent"><code>handleEvent</code></a> method i
 
 
 <div class="description">
-    <p>If a dialog is open, this method simply closes the dialog without setting a return value.
+    <p>If a dialog is open, this method simply closes the dialog without setting its return value.
 Otherwise, it navigates back to the parent page, if defined by <a href="jrt.Page.html#getParentId"><code>jrt.Page#getParentId</code></a>.
 If no parent page is defined, then this method navigates to the previous page in the
-browser history. For an installed app, if the current page id is <a href="jrt.App.html#mainPageId"><code>mainPageId</code></a>,
-then this method will exit the application.</p>
+browser history or, if browser history is not enabled, to the main page (that defined
+by <a href="jrt.App.html#mainPageId"><code>mainPageId</code></a>).</p>
+<p>For an installed app, if the current page is the main page, then this method will
+exit the application.</p>
 </div>
 
 
